@@ -1,0 +1,64 @@
+# Question: How can I generate all possible pairs (Cartesian product) of a list with itself?
+from itertools import product
+
+l = ['reddish', 'greenish', 'bluish']
+p = list(product(l, repeat=2))
+print("1. Product:", p)
+print()
+
+# 2. Combinations
+# Question: How do I find all unique 2-item combinations from a list where order doesn't matter?
+from itertools import combinations
+
+l = ['Z', 'Y', 'U', 'V']
+c = list(combinations(l, 2))
+print("2. Combinations:", c)
+print()
+
+# 3. Counting Sequence
+# Question: How can I create an infinite iterator starting at 10 and retrieve the first 5 numbers?
+from itertools import count
+
+c_count = count(10)
+r_count = [next(c_count) for _ in range(5)]
+print("3. Count:", r_count)
+print()
+
+# 4. Cycling Elements
+# Question: How do I infinitely repeat a sequence of numbers and pick the first 9 results?
+from itertools import cycle
+
+l_cycle = [5, 10, 15]
+c_cycle = cycle(l_cycle)
+r_cycle = [next(c_cycle) for _ in range(9)]
+print("4. Cycle:", r_cycle)
+print()
+
+# 5. Slicing an Infinite Cycle
+# Question: How can I use islice to take a specific number of items from an infinite cycle?
+from itertools import cycle, islice
+
+l_slice = ['m', 'n']
+c_slice = cycle(l_slice)
+r_slice = list(islice(c_slice, 6))
+print("5. islice:", r_slice)
+print()
+
+# 6. String Permutations
+# Question: How do I generate and join all possible re-orderings (permutations) of a numeric string?
+from itertools import permutations
+
+s_perm = '190'
+p_perm = list(permutations(s_perm))
+print("6. String Permutations:")
+for x in p_perm:
+    print(''.join(x))
+print()
+
+# 7. List Permutations
+# Question: How do I generate all possible ordered arrangements (permutations) of a list of characters?
+from itertools import permutations
+
+l_list_perm = ['A', 'B', 'C']
+p_list_perm = list(permutations(l_list_perm))
+print("7. List Permutations:", p_list_perm)
